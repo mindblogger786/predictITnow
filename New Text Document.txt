@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #countdown {
+            font-size: 20px;
+        }
+    </style>
+    <title>Dynamic Table</title>
+</head>
+<body>
+    <h2>Dynamic Table</h2>
+    <div id="countdown">Time remaining: <span id="timer">20</span> seconds</div>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Period</th>
+                <th>Color</th>
+                <th>Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script>
+        function generateRandomData() {
+            const period = generateID();
+            const colors = ['red', 'green', 'blue'];
+            const sizes = ['big', 'small'];
+
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const size = sizes[Math.floor(Math.random() * sizes.length)];
+
+            return { period, color, size };
+        }
+
+        function generateID() {
+            const prefix = '23';
+            const randomDigits = Math.floor(Math.random() * 100000000);
+            return prefix + String(randomDigits).padStart(6, '0');
+        }
+
+        function updateTable() {
+            const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+            const data = generateRandomData();
+
+            const row = tableBody.insertRow(0);
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+
+            cell1.textContent = data.period;
+            cell2.textContent = data.color;
+            cell3.textContent = data.size;
+        }
+
+        function updateCountdown() {
+            let seconds = 20;
+            const timerElement = document.getElementById('timer');
+
+            function countdown() {
+                timerElement.textContent = seconds;
+                if (seconds === 0) {
+                    updateTable();
+                    seconds = 20;
+                } else {
+                    seconds--;
+                }
+            }
+
+            countdown(); // Initial call
+            setInterval(countdown, 1000);
+        }
+
+        // Check if there's existing data in local storage
+        const storedData = JSON.parse(localStorage.getItem('tableData')) || [];
+        const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+
+        // Populate table with stored data
+        storedData.forEach(data => {
+            const row = tableBody.insertRow(0);
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+
+            cell1.textContent = data.period;
+            cell2.textContent = data.color;
+            cell3.textContent = data.size;
+        });
+
+        // Start countdown and update table
+        updateCountdown();
+
+        // Store data in local storage when the page is closed or refreshed
+        window.addEventListener('beforeunload', function () {
+            const rows = tableBody.getElementsByTagName('tr');
+            const newData = [];
+
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                newData.push({
+                    period: cells[0].textContent,
+                    color: cells[1].textContent,
+                    size: cells[2].textContent
+                });
+            }
+
+            localStorage.setItem('tableData', JSON.stringify(newData));
+        });
+    </script>
+</body>
+</html>

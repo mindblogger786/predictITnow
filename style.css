@@ -141,9 +141,10 @@ button {
 #prediction button{
     margin: 10px;
     padding: 5px;
-    width: 1.5cm;
+    width: 2cm;
     height: 1.5cm;
     border: 1px solid black;
+    font-weight: 600;
 }
 #prediction p{
     margin-top: 25px;

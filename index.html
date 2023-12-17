@@ -14,21 +14,18 @@
         </header>
         <div class="container">
             <table id="table1">
+                <tr>
                 <th><p>Period ID: <span id="period"></span></p></th>
-                <th><p>Time remaining: <span id="timer-countdown">1 : 30</span></p></th>
+                <th><p>Time remaining: <span id="timer-countdown">1 : 30</span><span id="time-expired"></span></p></th>
+                </tr>
             </table>
-            <div id="options">
-                <button style="background: green;" onclick="selectOption('green')">Green</button>
-                <button style="background: red;" onclick="selectOption('red')">Red</button>
-                <button style="background: blue;" onclick="selectOption('blue')">Blue</button>
-                <button style="background: grey;" onclick="selectOption('small')">Small</button>
-                <button style="background: grey;" onclick="selectOption('big')">Big</button>
-            </div>
             <div>
                 <table id="table2">
-                    <th>Period</th>
-                    <th>Color</th>
-                    <th>Size</th>
+                    <tr>
+                        <th>Period</th>
+                        <th>Color</th>
+                        <th>Size</th>
+                    </tr>
                     <tr>
                         <td>2100</td>
                         <td>Green</td>
@@ -41,44 +38,57 @@
                     </tr>
                 </table>
             </div>
+            <div id="options">
+                <button style="background: green;" onclick="selectOption('green')">Green</button>
+                <button style="background: red;" onclick="selectOption('red')">Red</button>
+                <button style="background: blue;" onclick="selectOption('blue')">Blue</button>
+                <button style="background: grey;" onclick="selectOption('small')">Small</button>
+                <button style="background: grey;" onclick="selectOption('big')">Big</button>
+            </div>
             <div id="amount-selection">
                 <button onclick="selectAmount(1)">1</button>
                 <button onclick="selectAmount(10)">10</button>
                 <button onclick="selectAmount(50)">50</button>
                 <button onclick="selectAmount(100)">100</button>
                 <p>X</p>
-                <button>1</button>
-                <button>2</button>
-                <button>5</button>
-                <button>10</button>
+                <button onclick="selectMultiples(1)">1</button>
+                <button onclick="selectMultiples(2)">2</button>
+                <button onclick="selectMultiples(5)">5</button>
+                <button onclick="selectMultiples(10)">10</button>
             </div>
             <div id="prediction">
-                <button id="item"></button>
-                <button id="amount"></button>
+                <button id="item">Item</button>
+                <button id="amount">Bet</button>
                 <p>X</p>
-                <button id="multiple"></button>
+                <button id="multiples">Times</button>
                 <p>=</p>
-                <button id="total"></button>
+                <button id="total">Total</button>
                 <button id="predict-button" onclick="startPrediction()">Predict</button>
             </div>
             <div>
                 <table id="table3">
-                    <th>Period</th>
-                    <th>Color</th>
-                    <th>Size</th>
-                    <th>Result</th>
-                    <tr>
-                        <td>2100</td>
-                        <td>Green</td>
-                        <td>Small</td>
-                        <td>+1.90</td>
-                    </tr>
-                    <tr>
-                        <td>2101</td>
-                        <td>Red</td>
-                        <td>Small</td>
-                        <td>-0.95</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Color</th>
+                            <th>Size</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2100</td>
+                            <td>Green</td>
+                            <td>Small</td>
+                            <td>+1.90</td>
+                        </tr>
+                        <tr>
+                            <td>2101</td>
+                            <td>Red</td>
+                            <td>Small</td>
+                            <td>-0.95</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
