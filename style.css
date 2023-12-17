@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f0f0f0;
+}
+.page{
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    width: 21cm;
+    height: 29.7cm;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+    margin-top: 0.5cm;
+    margin-bottom: 0.5cm;
+}
+header{
+    width: 100%;
+    text-align: center;
+    margin-top: -50px;
+    margin-bottom: 30px;
+    padding: 0;
+}
+header h1{
+    font-size: 80px;
+    margin-bottom: 0;
+    background-image: linear-gradient(to right, red 30%, blue 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+header p{
+    font-weight: 600;
+    margin-top: -10px;
+}
+.container {
+    width: 20cm;
+    height: 24cm;
+}
+#table1{
+    width: 100%;
+    text-align: left;
+    background: #F9F0D3;
+    
+}
+#table1 th{
+    width: 50%;
+    padding-left: 10px;
+    border: 2px solid navy;
+}
+#options{
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid navy;
+    height: 3cm;
+    background: #D3F9EF;
+}
+#options button{
+    margin: 10px;
+    padding: 5px;
+    height: 50px;
+    width: 100px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+}
+#options button:hover{
+    box-shadow: 0 0 0.2cm rgba(0,0,0,0.5);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+#table2{
+    width: 100%;
+    text-align: left;
+    background: #F9F0D3;
+    border: 2px solid navy;
+}
+#table2 th{
+    width: 33%;
+    padding-left: 10px;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid navy;
+    border-right: 2px solid navy;
+}
+#table2 td{
+    padding-left: 20px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+#amount-selection {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid navy;
+    background: #D3F9EF;
+}
+#amount-selection p{
+    font-size: 30px;
+    font-weight: 900;
+    margin: 0;
+}
+#amount-selection button{
+    margin: 20px;
+    padding: 5px;
+    height: 50px;
+    width: 100px;
+    margin-top: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 800;
+}
+#amount-selection button:hover{
+    box-shadow: 0 0 0.2cm rgba(0,0,0,0.5);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+#prediction{
+    display: flex;
+    border: 2px solid navy;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    background: #D3F9EF;
+    margin-bottom: 10px;
+}
+#prediction button{
+    margin: 10px;
+    padding: 5px;
+    width: 1.5cm;
+    height: 1.5cm;
+    border: 1px solid black;
+}
+#prediction p{
+    margin-top: 25px;
+    font-weight: 900;
+}
+#prediction #predict-button{
+    width: 2.5cm;
+    font-weight: 900;
+    margin-left: 100px;
+    background: #F9F0D3;
+}
+#prediction #predict-button:hover{
+    box-shadow: 0 0 0.2cm rgba(0,0,0,0.5);
+    transition: 0.3s ease;
+}
+#table3{
+    width: 100%;
+    text-align: left;
+    background: #F9F0D3;
+    border: 2px solid navy;
+}
+#table3 th{
+    width: 33%;
+    padding-left: 10px;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid navy;
+    border-right: 2px solid navy;
+}
+#table3 td{
+    padding-left: 20px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+footer{
+    background: linear-gradient(to right, red , blue, green);
+    height: 2cm;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+
+
+
+
+

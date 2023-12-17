@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>predictITnow</title>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>predictITnow</h1>
+            <p>The best & fun prediction game</p>
+        </header>
+        <div class="container">
+            <table id="table1">
+                <th><p>Period ID: <span id="period"></span></p></th>
+                <th><p>Time remaining: <span id="timer-countdown">1 : 30</span></p></th>
+            </table>
+            <div id="options">
+                <button style="background: green;" onclick="selectOption('green')">Green</button>
+                <button style="background: red;" onclick="selectOption('red')">Red</button>
+                <button style="background: blue;" onclick="selectOption('blue')">Blue</button>
+                <button style="background: grey;" onclick="selectOption('small')">Small</button>
+                <button style="background: grey;" onclick="selectOption('big')">Big</button>
+            </div>
+            <div>
+                <table id="table2">
+                    <th>Period</th>
+                    <th>Color</th>
+                    <th>Size</th>
+                    <tr>
+                        <td>2100</td>
+                        <td>Green</td>
+                        <td>Small</td>
+                    </tr>
+                    <tr>
+                        <td>2101</td>
+                        <td>Red</td>
+                        <td>Small</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="amount-selection">
+                <button onclick="selectAmount(1)">1</button>
+                <button onclick="selectAmount(10)">10</button>
+                <button onclick="selectAmount(50)">50</button>
+                <button onclick="selectAmount(100)">100</button>
+                <p>X</p>
+                <button>1</button>
+                <button>2</button>
+                <button>5</button>
+                <button>10</button>
+            </div>
+            <div id="prediction">
+                <button id="item"></button>
+                <button id="amount"></button>
+                <p>X</p>
+                <button id="multiple"></button>
+                <p>=</p>
+                <button id="total"></button>
+                <button id="predict-button" onclick="startPrediction()">Predict</button>
+            </div>
+            <div>
+                <table id="table3">
+                    <th>Period</th>
+                    <th>Color</th>
+                    <th>Size</th>
+                    <th>Result</th>
+                    <tr>
+                        <td>2100</td>
+                        <td>Green</td>
+                        <td>Small</td>
+                        <td>+1.90</td>
+                    </tr>
+                    <tr>
+                        <td>2101</td>
+                        <td>Red</td>
+                        <td>Small</td>
+                        <td>-0.95</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <footer>
+            <p>Copyright &#169; 2023 | All rights reserved</p>
+        </footer>
+    </div>
+    
+    
+    
+    
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
